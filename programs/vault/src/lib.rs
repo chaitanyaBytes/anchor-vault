@@ -172,7 +172,8 @@ impl<'info> Payment<'info> {
 
         // When the CPI is processed, the Solana runtime will validate that the provided seeds and
         // caller program ID derive a valid PDA. The PDA is then added as a signer on the invocation.
-        // "This mechanism allows for programs to sign for PDAs that are derived from their program ID."a
+        // "This mechanism allows for programs to sign for PDAs that are derived from their program ID."
+        // “Hey, I control this PDA because I know the seeds used to generate it and it was created with my program ID.”
         let seeds: &[&[u8]] = &[
             b"vault",
             self.user.key.as_ref(),
